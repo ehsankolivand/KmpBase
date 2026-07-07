@@ -1,0 +1,20 @@
+# Gradle / Kotlin build state (regenerable)
+.gradle/
+build/
+.kotlin/
+
+# Machine-specific — never commit (holds the local Android SDK path)
+local.properties
+
+# IDE (Android Studio / IntelliJ)
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# macOS
+.DS_Store
+
+# Xcode / iOS — inert until the iosApp module arrives in S8
+**/xcuserdata/
