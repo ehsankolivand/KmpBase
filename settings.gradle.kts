@@ -21,4 +21,5 @@ rootProject.name = "KmpBase"
 
 // gen:begin GEN:INCLUDES
 include(":core:domain")
+include(":core:platform")
 // gen:end GEN:INCLUDES
