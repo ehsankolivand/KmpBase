@@ -15,7 +15,10 @@ kotlin {
     // (AGP 9.2.x doesn't reliably expose them from plugin code — revisit at AGP 9.3+/10).
     android {
     }
-
+    compilerOptions{
+        freeCompilerArgs.add("-Xexpect-actual-classes")
+    }
+    applyDefaultHierarchyTemplate()
     sourceSets {
         commonTest.dependencies {
             implementation(kotlin("test"))
