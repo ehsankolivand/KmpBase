@@ -9,7 +9,7 @@ pluginManagement {
 plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
 }
-
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 dependencyResolutionManagement {
     repositories {
         google()
@@ -22,4 +22,5 @@ rootProject.name = "KmpBase"
 // gen:begin GEN:INCLUDES
 include(":core:domain")
 include(":core:platform")
+include(":core:testing")
 // gen:end GEN:INCLUDES

@@ -14,6 +14,7 @@ kotlin {
     // Android target; namespace/compileSdk/minSdk are set per-module
     // (AGP 9.2.x doesn't reliably expose them from plugin code — revisit at AGP 9.3+/10).
     android {
+        withHostTest {}
     }
     compilerOptions{
         freeCompilerArgs.add("-Xexpect-actual-classes")
