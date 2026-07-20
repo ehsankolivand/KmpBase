@@ -23,4 +23,5 @@ rootProject.name = "KmpBase"
 include(":core:domain")
 include(":core:platform")
 include(":core:testing")
+include(":core:database")
 // gen:end GEN:INCLUDES
