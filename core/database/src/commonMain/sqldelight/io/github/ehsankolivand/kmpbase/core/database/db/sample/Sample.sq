@@ -1,0 +1,17 @@
+CREATE TABLE sampleEntity (
+    id TEXT NOT NULL PRIMARY KEY,
+    label TEXT NOT NULL,
+    created_at INTEGER NOT NULL
+);
+
+selectAll:
+SELECT * FROM sampleEntity;
+
+selectById:
+SELECT * FROM sampleEntity WHERE id = ?;
+
+insert:
+INSERT INTO sampleEntity(id, label, created_at) VALUES (?, ?, ?);
+
+deleteAll:
+DELETE FROM sampleEntity;
