@@ -26,10 +26,13 @@ kotlin {
     }
 }
 
-sqldelight {
-    databases {
-        create("AppDatabase") {
-            packageName.set("io.github.ehsankolivand.kmpbase.core.database")
+
+    sqldelight {
+        databases {
+            create("AppDatabase") {
+                packageName.set("io.github.ehsankolivand.kmpbase.core.database")
+                schemaOutputDirectory.set(file("src/commonMain/sqldelight/io/github/ehsankolivand/kmpbase/core/database/db"))
+                verifyMigrations.set(true)
+            }
         }
     }
-}
