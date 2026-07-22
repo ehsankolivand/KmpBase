@@ -24,4 +24,5 @@ include(":core:domain")
 include(":core:platform")
 include(":core:testing")
 include(":core:database")
+include(":core:network")
 // gen:end GEN:INCLUDES
