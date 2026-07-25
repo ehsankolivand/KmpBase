@@ -26,4 +26,5 @@ include(":core:testing")
 include(":core:database")
 include(":core:network")
 include(":core:data")
+include(":core:designsystem")
 // gen:end GEN:INCLUDES
