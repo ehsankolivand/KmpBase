@@ -13,6 +13,7 @@ kotlin {
     }
     sourceSets {
         commonMain.dependencies {
+            api(libs.koin.core)
             api(projects.core.platform)
             api(libs.sqldelight.runtime)
             api(libs.sqldelight.coroutines.extensions)

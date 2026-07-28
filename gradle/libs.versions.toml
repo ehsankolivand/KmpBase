@@ -1,4 +1,5 @@
 [versions]
+
 kotlin = "2.4.10"
 agp = "9.3.1"
 compose = "1.11.1"
@@ -15,6 +16,12 @@ ktor = "3.5.1"
 kotlinx-serialization = "1.11.0"
 jetbrainsLifecycle = "2.11.0"
 composeMaterial3 = "1.11.0-alpha07"
+
+koin = "4.2.2"
+decompose = "3.5.0"
+essenty = "2.5.0"
+kermit = "2.1.0"
+androidxActivity = "1.13.0"
 
 [libraries]
 android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
@@ -43,7 +50,21 @@ compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "compose" }
 jetbrains-lifecycle-runtime-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "jetbrainsLifecycle" }
 compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "composeMaterial3" }
 
+
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+decompose = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose" }
+decompose-extensions-compose = { module = "com.arkivanov.decompose:extensions-compose", version.ref = "decompose" }
+essenty-state-keeper = { module = "com.arkivanov.essenty:state-keeper", version.ref = "essenty" }
+
+kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
+
+
+gradlePlugin-kotlinAndroid = { module = "org.jetbrains.kotlin.android:org.jetbrains.kotlin.android.gradle.plugin", version.ref = "kotlin" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidxActivity" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+
 [plugins]
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "compose" }
