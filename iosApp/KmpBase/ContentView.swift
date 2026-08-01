@@ -1,24 +1,13 @@
-//
-//  ContentView.swift
-//  KmpBase
-//
-//  Created by ehsan kolivans on 5/10/1405 AP.
-//
-
 import SwiftUI
+import UIKit
+import Shared
 
-struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+struct ContentView: UIViewControllerRepresentable {
+    let root: RootComponent
+
+    func makeUIViewController(context: Context) -> UIViewController {
+        MainViewControllerKt.mainViewController(root: root)
     }
-}
 
-#Preview {
-    ContentView()
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
 }

@@ -1,17 +1,18 @@
-//
-//  KmpBaseApp.swift
-//  KmpBase
-//
-//  Created by ehsan kolivans on 5/10/1405 AP.
-//
-
 import SwiftUI
+import Shared
 
 @main
 struct KmpBaseApp: App {
+    let root: RootComponent
+
+    init() {
+        MainViewControllerKt.startApp()
+        root = MainViewControllerKt.createRootComponent()
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(root: root)
         }
     }
 }
