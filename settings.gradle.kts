@@ -27,4 +27,6 @@ include(":core:database")
 include(":core:network")
 include(":core:data")
 include(":core:designsystem")
+include(":shared")
+include(":androidApp")
 // gen:end GEN:INCLUDES
