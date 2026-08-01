@@ -1,16 +1,24 @@
+import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 
 plugins {
     id("blueprint.kmp.library")
 }
 
+val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
+val stateKeeper = libs.findLibrary("essenty-state-keeper").get()
+
 extensions.configure<KotlinMultiplatformExtension> {
     val xcfName = "Shared"
+    val xcf = XCFramework(xcfName)
 
-    iosArm64 { binaries.framework { baseName = xcfName; isStatic = true } }
-    iosSimulatorArm64 { binaries.framework { baseName = xcfName; isStatic = true } }
-
-    // TODO(S8): export Essenty for iOS state preservation once Decompose/Essenty are in the catalog:
-    //   iosArm64 { binaries.framework { export(libs.essenty.stateKeeper) } }
-    //   iosSimulatorArm64 { binaries.framework { export(libs.essenty.stateKeeper) } }
+    listOf(iosArm64(), iosSimulatorArm64()).forEach { target ->
+        target.binaries.framework {
+            baseName = xcfName
+            isStatic = true
+            export(stateKeeper)
+            xcf.add(this)
+        }
+    }
 }

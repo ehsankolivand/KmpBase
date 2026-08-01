@@ -62,7 +62,7 @@ kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
 gradlePlugin-kotlinAndroid = { module = "org.jetbrains.kotlin.android:org.jetbrains.kotlin.android.gradle.plugin", version.ref = "kotlin" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidxActivity" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
-
+koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
 [plugins]
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }

@@ -1,6 +1,7 @@
 plugins {
     id("blueprint.kmp.library")
     id("blueprint.compose")
+    id("blueprint.ios.framework")
     alias(libs.plugins.kotlin.serialization)
 }
 
@@ -24,6 +25,8 @@ kotlin {
             api(libs.decompose)
             api(libs.decompose.extensions.compose)
             api(libs.essenty.state.keeper)
+            implementation(libs.koin.test)
+
         }
     }
 }
