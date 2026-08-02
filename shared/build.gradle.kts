@@ -14,6 +14,9 @@ kotlin {
     }
 
     sourceSets {
+        jvmTest.dependencies {
+            implementation(libs.koin.test)
+        }
         commonMain.dependencies {
             api(projects.core.domain)
             api(projects.core.platform)
@@ -25,8 +28,6 @@ kotlin {
             api(libs.decompose)
             api(libs.decompose.extensions.compose)
             api(libs.essenty.state.keeper)
-            implementation(libs.koin.test)
-
         }
     }
 }
