@@ -13,7 +13,7 @@ fun Throwable.toDomainError(): DomainError = when (this) {
     is ClientRequestException -> when (response.status.value) {
         401, 403 -> DomainError.Unauthorized
         404 -> DomainError.NotFound
-        400, 422 -> DomainError.Validation(message = message)
+        400, 422 -> DomainError.Validation(message = "Validation error")
         else -> DomainError.Network(cause = this)
     }
     is ServerResponseException -> DomainError.Network(cause = this)
