@@ -18,3 +18,5 @@ out/
 
 # Xcode / iOS — inert until the iosApp module arrives in S8
 **/xcuserdata/
+.repo-intel
+docs
