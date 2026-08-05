@@ -6,8 +6,7 @@ plugins {
 kotlin {
     android {
         namespace = "io.github.ehsankolivand.kmpbase.core.network"
-        compileSdk = libs.versions.compileSdk.get().toInt()
-        minSdk = libs.versions.minSdk.get().toInt()
+
     }
     sourceSets {
         commonMain.dependencies {

@@ -9,8 +9,7 @@ kotlin {
 
     android {
         namespace = "io.github.ehsankolivand.kmpbase.shared"
-        compileSdk = libs.versions.compileSdk.get().toInt()
-        minSdk = libs.versions.minSdk.get().toInt()
+
     }
 
     sourceSets {

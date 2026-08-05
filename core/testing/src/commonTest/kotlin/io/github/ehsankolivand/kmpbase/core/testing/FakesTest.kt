@@ -8,7 +8,6 @@ import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 import kotlin.test.assertTrue
 import kotlin.time.Duration.Companion.minutes
-import kotlin.uuid.ExperimentalUuidApi
 
 class FakesTest {
 
@@ -22,7 +21,6 @@ class FakesTest {
         assertEquals(30.minutes, clock.now() - start)
     }
 
-    @OptIn(ExperimentalUuidApi::class)
     @Test
     fun fakeUuidGenerator_produces_a_deterministic_sequence() {
         val generator = FakeUuidGenerator()
