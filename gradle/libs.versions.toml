@@ -3,6 +3,7 @@
 kotlin = "2.4.10"
 agp = "9.3.1"
 compose = "1.11.1"
+composeMaterialIconsCore = "1.7.3"
 compileSdk = "37"
 #noinspection OldTargetApi
 targetSdk = "36"
@@ -65,6 +66,8 @@ koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
 
 compose-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "compose" }
+compose-material-icons-core = { module = "org.jetbrains.compose.material:material-icons-core", version.ref = "composeMaterialIconsCore" }
+
 [plugins]
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
