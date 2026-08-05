@@ -7,6 +7,8 @@ import io.github.ehsankolivand.kmpbase.core.platform.CrashReporter
 import io.ktor.client.plugins.ClientRequestException
 import io.ktor.client.plugins.ServerResponseException
 import kotlin.coroutines.cancellation.CancellationException
+import io.ktor.client.plugins.HttpRequestTimeoutException
+import kotlinx.io.IOException
 
 
 fun Throwable.toDomainError(): DomainError = when (this) {
@@ -17,6 +19,8 @@ fun Throwable.toDomainError(): DomainError = when (this) {
         else -> DomainError.Network(cause = this)
     }
     is ServerResponseException -> DomainError.Network(cause = this)
+    is HttpRequestTimeoutException -> DomainError.Network(cause = this)
+    is IOException -> DomainError.Network(cause = this)
     else -> DomainError.Unknown(cause = this)
 }
 
