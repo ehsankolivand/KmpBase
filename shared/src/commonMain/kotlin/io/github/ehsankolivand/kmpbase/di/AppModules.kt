@@ -1,6 +1,5 @@
 package io.github.ehsankolivand.kmpbase.di
 
-import io.github.ehsankolivand.kmpbase.core.database.di.coreDatabaseModule
 import io.github.ehsankolivand.kmpbase.core.network.di.coreNetworkModule
 import io.github.ehsankolivand.kmpbase.core.platform.AnalyticsTracker
 import io.github.ehsankolivand.kmpbase.core.platform.CrashReporter
@@ -14,6 +13,8 @@ import org.koin.dsl.KoinAppDeclaration
 import org.koin.dsl.includes
 import org.koin.dsl.module
 
+expect fun platformFeatureModules(): List<Module>
+
 val defaultsModule: Module = module {
     single<CrashReporter> { NoOpCrashReporter() }
     single<AnalyticsTracker> { NoOpAnalyticsTracker() }
@@ -24,10 +25,9 @@ val appModules: List<Module> = listOf(
     platformModule(),
     defaultsModule,
     coreNetworkModule,
-    coreDatabaseModule,
     // gen:begin GEN:KOIN
     // gen:end GEN:KOIN
-)
+) + platformFeatureModules()
 
 fun initKoin(config: KoinAppDeclaration? = null) {
     startKoin {
