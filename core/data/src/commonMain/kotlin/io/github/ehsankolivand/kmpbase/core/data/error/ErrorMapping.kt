@@ -24,6 +24,7 @@ fun Throwable.toDomainError(): DomainError = when (this) {
     else -> DomainError.Unknown(cause = this)
 }
 
+
 inline fun <T> runCatchingDomain(
     reporter: CrashReporter,
     block: () -> T,
@@ -33,6 +34,9 @@ inline fun <T> runCatchingDomain(
     } catch (c: CancellationException) {
         throw c
     } catch (t: Throwable) {
-        reporter.recordException(t)
-        DataResult.Failure(t.toDomainError())
+        val error = t.toDomainError()
+        if (error is DomainError.Unknown) {
+            reporter.recordException(t)
+        }
+        DataResult.Failure(error)
     }
