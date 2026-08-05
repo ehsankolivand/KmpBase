@@ -17,3 +17,5 @@ actual fun platformModule(): Module = module {
     single<UuidGenerator> { DefaultUuidGenerator() }
     single<Logger> { DefaultLogger() }
 }
+
+actual fun platformFeatureModules(): List<Module> = emptyList()

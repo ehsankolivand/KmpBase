@@ -1,4 +1,4 @@
-package io.github.ehsankolivand.kmpbase.core.domain.result.mvi
+package io.github.ehsankolivand.kmpbase.core.domain.mvi
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow

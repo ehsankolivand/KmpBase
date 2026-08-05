@@ -1,10 +1,13 @@
 package io.github.ehsankolivand.kmpbase.core.testing
 
+import io.github.ehsankolivand.kmpbase.core.platform.Flag
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
+import kotlin.test.assertTrue
 import kotlin.time.Duration.Companion.minutes
-import kotlin.uuid.ExperimentalUuidApi
 
 class FakesTest {
 
@@ -18,7 +21,6 @@ class FakesTest {
         assertEquals(30.minutes, clock.now() - start)
     }
 
-    @OptIn(ExperimentalUuidApi::class)
     @Test
     fun fakeUuidGenerator_produces_a_deterministic_sequence() {
         val generator = FakeUuidGenerator()
@@ -39,5 +41,16 @@ class FakesTest {
 
         assertEquals(1, reporter.recordedExceptions.size)
         assertEquals(boom, reporter.recordedExceptions.first())
+    }
+
+    @Test
+    fun fakeFeatureFlagsReflectsSetValueInBothReadPaths() = runTest {
+        val flag = Flag.Bool(key = "new_checkout", default = false)
+        val flags = FakeFeatureFlags()
+
+        flags.setFlag(flag, true)
+
+        assertTrue(flags.bool(flag))
+        assertTrue(flags.observe(flag).first())
     }
 }

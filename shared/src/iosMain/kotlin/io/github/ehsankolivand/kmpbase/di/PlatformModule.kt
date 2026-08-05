@@ -12,6 +12,7 @@ import io.github.ehsankolivand.kmpbase.core.platform.Logger
 import io.github.ehsankolivand.kmpbase.core.platform.UuidGenerator
 import org.koin.core.module.Module
 import org.koin.dsl.module
+import io.github.ehsankolivand.kmpbase.core.database.di.coreDatabaseModule
 
 actual fun platformModule(): Module = module {
     single<DispatcherProvider> { DefaultDispatcherProvider() }
@@ -20,3 +21,5 @@ actual fun platformModule(): Module = module {
     single<Logger> { DefaultLogger() }
     single<DriverFactory> { IosDriverFactory() }
 }
+
+actual fun platformFeatureModules(): List<Module> = listOf(coreDatabaseModule)
