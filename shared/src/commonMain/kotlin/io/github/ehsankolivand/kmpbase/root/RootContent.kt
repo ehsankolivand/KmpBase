@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.extensions.compose.stack.Children
 import com.arkivanov.decompose.extensions.compose.stack.animation.fade
 import com.arkivanov.decompose.extensions.compose.stack.animation.stackAnimation
+import io.github.ehsankolivand.kmpbase.core.designsystem.gallery.ComponentGallery
 
 @Composable
 fun RootContent(component: RootComponent) {
@@ -17,7 +18,7 @@ fun RootContent(component: RootComponent) {
         animation = stackAnimation(fade()),
     ) { child ->
         when (child.instance) {
-            is PlaceholderRoot -> PlaceholderScreen()
+            is PlaceholderRoot -> ComponentGallery()
             // gen:begin GEN:NAV_RENDER
             // gen:end GEN:NAV_RENDER
             else -> Unit
