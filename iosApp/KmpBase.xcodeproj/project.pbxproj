@@ -30,9 +30,22 @@
 		BE212A89301E227A00FD2986 /* Shared.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Shared.xcframework; path = ../shared/build/XCFrameworks/debug/Shared.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BE8091CB30237EFE003354FB /* Exceptions for "KmpBase" folder in "KmpBase" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = BE212A73301E1B0500FD2986 /* KmpBase */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		BE212A76301E1B0500FD2986 /* KmpBase */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BE8091CB30237EFE003354FB /* Exceptions for "KmpBase" folder in "KmpBase" target */,
+			);
 			path = KmpBase;
 			sourceTree = "<group>";
 		};
@@ -306,6 +319,7 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/../shared/build/XCFrameworks/$(CONFIGURATION:lower)";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KmpBase/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -351,6 +365,7 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(SRCROOT)/../shared/build/XCFrameworks/$(CONFIGURATION:lower)";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KmpBase/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
