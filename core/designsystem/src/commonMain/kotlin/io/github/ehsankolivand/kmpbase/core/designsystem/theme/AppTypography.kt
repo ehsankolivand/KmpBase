@@ -7,6 +7,13 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import io.github.ehsankolivand.kmpbase.core.designsystem.resources.Res
+import io.github.ehsankolivand.kmpbase.core.designsystem.resources.bricolage_bold
+import io.github.ehsankolivand.kmpbase.core.designsystem.resources.bricolage_extrabold
+import io.github.ehsankolivand.kmpbase.core.designsystem.resources.figtree_regular
+import io.github.ehsankolivand.kmpbase.core.designsystem.resources.figtree_semibold
+import org.jetbrains.compose.resources.Font
+
 
 @Immutable
 data class CatalogFonts(
@@ -16,8 +23,14 @@ data class CatalogFonts(
 
 @Composable
 fun rememberCatalogFonts(): CatalogFonts = CatalogFonts(
-    display = FontFamily.SansSerif,
-    ui = FontFamily.SansSerif,
+    display = FontFamily(
+        Font(Res.font.bricolage_bold, FontWeight.Bold),
+        Font(Res.font.bricolage_extrabold, FontWeight.ExtraBold),
+    ),
+    ui = FontFamily(
+        Font(Res.font.figtree_regular, FontWeight.Normal),
+        Font(Res.font.figtree_semibold, FontWeight.SemiBold),
+    ),
 )
 
 fun catalogTypography(fonts: CatalogFonts): Typography = Typography(

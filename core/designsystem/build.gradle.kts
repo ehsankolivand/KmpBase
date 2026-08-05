@@ -15,6 +15,12 @@ kotlin {
             api(libs.compose.foundation)
             api(libs.compose.ui)
             api(libs.compose.material3)
+            implementation(libs.compose.components.resources)
         }
     }
+}
+compose.resources {
+    publicResClass = true
+    packageOfResClass = "io.github.ehsankolivand.kmpbase.core.designsystem.resources"
+    generateResClass = always
 }
